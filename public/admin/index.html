@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Sistema de Rastreamento</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <main class="login-layout">
+      <section class="login-card">
+        <span class="brand-badge">Painel Admin</span>
+        <h1 class="card-title">Acesso restrito</h1>
+        <p class="card-subtitle">
+          Faça login para gerenciar rastreios, atualizar status e acompanhar todas as entregas.
+        </p>
+
+        <form id="login-form" class="grid">
+          <label>
+            Usuario
+            <input type="text" name="username" placeholder="admin" required />
+          </label>
+
+          <label>
+            Senha
+            <input type="password" name="password" placeholder="Sua senha" required />
+          </label>
+
+          <button type="submit" class="btn-primary">Entrar no painel</button>
+        </form>
+
+        <div id="login-message" class="message"></div>
+      </section>
+    </main>
+
+    <script src="/scripts/common.js"></script>
+    <script src="/scripts/admin.js"></script>
+    <script src="/scripts/admin-login.js"></script>
+  </body>
+</html>

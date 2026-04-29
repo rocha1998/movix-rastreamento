@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rastreamento | Movix Transportadora</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header-inner">
+        <a class="brand" href="/index.html">
+          <span class="brand-mark">MT</span>
+          <span class="brand-text">
+            <strong>Movix Transportadora</strong>
+            <span>Logística e Transporte</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Principal">
+          <a href="/index.html#servicos">Serviços</a>
+          <a href="/index.html#infraestrutura">Infraestrutura</a>
+          <a href="/index.html#institucional">Institucional</a>
+          <a href="/index.html#contato">Contato</a>
+          <a class="nav-cta" href="/rastrear.html">Rastrear Carga</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Acompanhe sua carga</span>
+          <h1 class="hero-title">Consulta de rastreamento com histórico completo da entrega.</h1>
+          <p class="hero-copy">
+            Use seu CPF e o código do rastreio para visualizar o status atual, a previsão de entrega e toda a linha do tempo registrada no sistema.
+          </p>
+
+          <div class="hero-points">
+            <div class="hero-point">Pesquisa protegida por CPF e código corretos.</div>
+            <div class="hero-point">Resultados com atualização de status e observações operacionais.</div>
+          </div>
+        </div>
+
+        <aside class="tracking-spotlight">
+          <span class="eyebrow">Rastreie sua carga</span>
+          <h2>Pesquisar entrega</h2>
+          <p class="card-subtitle">
+            Informe os dados exatamente como foram enviados no cadastro do rastreio.
+          </p>
+
+          <form id="search-form" class="form-grid">
+            <label class="full">
+              CPF
+              <input type="text" name="cpf" maxlength="14" placeholder="000.000.000-00" required />
+            </label>
+
+            <label class="full">
+              Código de rastreio
+              <input type="text" name="trackingCode" placeholder="PED-230425-8472" required />
+            </label>
+
+            <button type="submit" class="btn-accent full">Pesquisar</button>
+          </form>
+
+          <small class="tracking-hint">Exemplo: PED-230425-8472</small>
+          <div id="search-message" class="message"></div>
+        </aside>
+      </div>
+    </section>
+
+    <main class="section-shell compact">
+      <div class="container search-layout">
+        <section id="tracking-result" class="hidden">
+          <div class="timeline-card">
+            <div class="section-heading">
+              <span class="eyebrow">Resultado</span>
+              <h2 class="section-title">Resumo da entrega</h2>
+              <p class="section-copy">Veja o destino, a previsão e o estágio atual da remessa.</p>
+            </div>
+            <div id="tracking-summary" class="tracking-summary"></div>
+          </div>
+
+          <div class="timeline-card" style="margin-top: 24px;">
+            <div class="section-heading">
+              <span class="eyebrow">Histórico</span>
+              <h2 class="section-title">Linha do tempo</h2>
+            </div>
+            <div id="timeline" class="timeline"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer id="contato" class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a class="brand footer-brand" href="/index.html">
+              <span class="brand-mark">MT</span>
+              <span class="brand-text">
+                <strong>Movix Transportadora</strong>
+                <span>Transporte Rodoviário de Cargas</span>
+              </span>
+            </a>
+          </div>
+
+          <div>
+            <h3 class="footer-title">Atendimento</h3>
+            <div class="footer-list">
+              <a href="tel:11925833922">(11) 92583-3922</a>
+              <a href="mailto:movixtransportadora1998@outlook.com">movixtransportadora1998@outlook.com</a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="footer-title">Institucional</h3>
+            <div class="footer-list">
+              <a href="/index.html#institucional">Quem somos</a>
+              <a href="/index.html#servicos">Serviços</a>
+              <a href="/index.html">Página inicial</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">© 2026 Movix Transportadora. Estrutura institucional editável.</div>
+      </div>
+    </footer>
+
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/55NUMERODOWHATSAPP"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Falar no WhatsApp"
+    >
+      Falar no WhatsApp
+    </a>
+
+    <script src="/scripts/common.js"></script>
+    <script src="/scripts/tracking-search.js"></script>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel Admin | Sistema de Rastreamento</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <div class="container">
+        <section class="hero-card">
+          <div class="toolbar">
+            <div>
+              <span class="brand-badge">Operacao logistica</span>
+              <h1 class="hero-title">Gestao de rastreamento</h1>
+              <p class="hero-subtitle">
+                Cadastre entregas, atualize o andamento e mantenha o cliente informado com uma consulta simples e segura.
+              </p>
+            </div>
+            <div class="toolbar-actions">
+              <button id="logout-button" class="btn-secondary">Sair</button>
+            </div>
+          </div>
+          <p class="muted">Administrador conectado: <strong id="admin-name">admin</strong></p>
+        </section>
+
+        <div class="grid grid-2">
+          <section class="panel">
+            <div class="toolbar">
+              <div>
+                <h2 id="form-title">Criar novo rastreio</h2>
+                <p class="muted">Preencha os campos obrigatorios para registrar uma nova entrega.</p>
+              </div>
+              <button id="reset-form" type="button" class="btn-secondary">Limpar</button>
+            </div>
+
+            <form id="tracking-form" class="form-grid">
+              <label>
+                Nome do cliente
+                <input type="text" name="customerName" required />
+              </label>
+
+              <label>
+                CPF
+                <input type="text" name="cpf" maxlength="14" required />
+              </label>
+
+              <label>
+                Codigo do rastreio
+                <input type="text" name="trackingCode" required />
+              </label>
+
+              <label>
+                Status atual
+                <input type="text" name="currentStatus" placeholder="Pedido em separacao" required />
+              </label>
+
+              <label>
+                Estado de origem
+                <input type="text" name="originState" required />
+              </label>
+
+              <label>
+                Estado de destino
+                <input type="text" name="destinationState" required />
+              </label>
+
+              <label>
+                Rua
+                <input type="text" name="street" required />
+              </label>
+
+              <label>
+                Numero
+                <input type="text" name="addressNumber" required />
+              </label>
+
+              <label>
+                CEP
+                <input type="text" name="cep" maxlength="9" required />
+              </label>
+
+              <label>
+                Data e hora prevista de entrega
+                <input type="datetime-local" name="estimatedDeliveryAt" required />
+              </label>
+
+              <label class="full">
+                Observacoes
+                <textarea name="observations" placeholder="Ex.: saiu do centro de distribuicao"></textarea>
+              </label>
+
+              <button type="submit" class="btn-primary full">Salvar rastreio</button>
+            </form>
+
+            <div id="form-message" class="message"></div>
+          </section>
+
+          <section class="panel">
+            <div class="toolbar">
+              <div>
+                <h2>Rastreios cadastrados</h2>
+                <p class="muted">Edite dados, troque o status atual ou remova registros antigos.</p>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Cliente</th>
+                    <th>CPF</th>
+                    <th>Codigo</th>
+                    <th>Rota</th>
+                    <th>Status</th>
+                    <th>Previsao</th>
+                    <th>Acoes</th>
+                  </tr>
+                </thead>
+                <tbody id="tracking-table-body"></tbody>
+              </table>
+            </div>
+
+            <div id="list-message" class="message"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <section id="status-modal" class="page-shell hidden" style="position: fixed; inset: 0; background: rgba(16, 24, 40, 0.4);">
+      <div class="container" style="max-width: 560px;">
+        <div class="panel">
+          <div class="toolbar">
+            <div>
+              <h2>Atualizar status</h2>
+              <p class="muted">Adicione um novo marco ao historico do rastreio.</p>
+            </div>
+            <button id="close-status-modal" type="button" class="btn-secondary">Fechar</button>
+          </div>
+
+          <form id="status-form" class="grid">
+            <label>
+              Novo status
+              <input type="text" name="status" required />
+            </label>
+
+            <label>
+              Observacao
+              <textarea name="note" placeholder="Ex.: encomenda saiu para entrega"></textarea>
+            </label>
+
+            <button type="submit" class="btn-primary">Registrar status</button>
+          </form>
+
+          <div id="status-message" class="message"></div>
+        </div>
+      </div>
+    </section>
+
+    <script src="/scripts/common.js"></script>
+    <script src="/scripts/admin.js"></script>
+    <script src="/scripts/admin-dashboard.js"></script>
+  </body>
+</html>
