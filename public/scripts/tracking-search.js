@@ -23,7 +23,6 @@ function renderLookup(data) {
       (item) => `
         <article class="timeline-item">
           <strong>${escapeHtml(item.status)}</strong>
-          <p class="muted">${escapeHtml(item.note || 'Sem observacoes adicionais.')}</p>
           <small class="muted">${escapeHtml(formatDateTime(item.createdAt))}</small>
         </article>
       `

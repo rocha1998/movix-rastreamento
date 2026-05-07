@@ -550,6 +550,16 @@ button:disabled {
   border-radius: 16px;
 }
 
+.timeline-item strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--navy-900);
+}
+
+.timeline-item small {
+  display: block;
+}
+
 .timeline-item::before {
   content: "";
   position: absolute;
