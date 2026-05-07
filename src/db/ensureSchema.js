@@ -21,7 +21,7 @@ async function ensureSchema() {
       origin_state VARCHAR(100) NOT NULL,
       destination_state VARCHAR(100) NOT NULL,
       street VARCHAR(150) NOT NULL,
-      address_number VARCHAR(20) NOT NULL,
+      address_number VARCHAR(50) NOT NULL,
       cep VARCHAR(9) NOT NULL,
       estimated_delivery_at TIMESTAMP NOT NULL,
       current_status VARCHAR(100) NOT NULL,
@@ -58,6 +58,12 @@ async function ensureSchema() {
   `);
 
   await pool.query(`
+    ALTER TABLE IF EXISTS trackings
+    ALTER COLUMN address_number TYPE VARCHAR(50);
+
+    ALTER TABLE IF EXISTS trackings
+    ALTER COLUMN address_number SET NOT NULL;
+
     ALTER TABLE IF EXISTS trackings
     ALTER COLUMN current_status TYPE VARCHAR(255);
 

@@ -61,6 +61,10 @@ function validateTrackingPayload(payload, { partial = false } = {}) {
     errors.push('CEP deve conter 8 digitos.');
   }
 
+  if (normalized.addressNumber && normalized.addressNumber.length > 50) {
+    errors.push('Numero deve conter no maximo 50 caracteres.');
+  }
+
   if (normalized.estimatedDeliveryAt) {
     const parsedDate = new Date(normalized.estimatedDeliveryAt);
     if (Number.isNaN(parsedDate.getTime())) {
