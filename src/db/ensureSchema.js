@@ -57,6 +57,14 @@ async function ensureSchema() {
     EXECUTE FUNCTION update_updated_at_column();
   `);
 
+  await pool.query(`
+    ALTER TABLE IF EXISTS trackings
+    ALTER COLUMN current_status TYPE VARCHAR(255);
+
+    ALTER TABLE IF EXISTS tracking_history
+    ALTER COLUMN status TYPE VARCHAR(255);
+  `);
+
   const existingAdmin = await pool.query(
     'SELECT id FROM admins WHERE username = $1 LIMIT 1',
     [DEFAULT_ADMIN_USERNAME]
