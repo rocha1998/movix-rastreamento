@@ -32,7 +32,8 @@ async function lookupTracking(req, res) {
       SELECT id, status, note, created_at
       FROM tracking_history
       WHERE tracking_id = $1
-      ORDER BY created_at ASC, id ASC
+      ORDER BY created_at DESC, id DESC
+      LIMIT 1
     `,
     [tracking.id]
   );
