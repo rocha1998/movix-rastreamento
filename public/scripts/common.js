@@ -47,3 +47,43 @@ function escapeHtml(value = '') {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
 }
+
+const navToggle = document.querySelector('.nav-toggle');
+const siteHeader = document.querySelector('.site-header');
+const siteNav = document.querySelector('.site-nav');
+const navCloseTargets = document.querySelectorAll('[data-nav-close]');
+
+function setNavOpenState(isOpen) {
+  if (!navToggle || !siteHeader || !siteNav) {
+    return;
+  }
+
+  siteHeader.classList.toggle('nav-open', isOpen);
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+  navToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+  document.body.classList.toggle('nav-lock', isOpen);
+}
+
+if (navToggle && siteHeader && siteNav) {
+  navToggle.addEventListener('click', () => {
+    setNavOpenState(!siteHeader.classList.contains('nav-open'));
+  });
+
+  navCloseTargets.forEach((element) => {
+    element.addEventListener('click', () => {
+      setNavOpenState(false);
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      setNavOpenState(false);
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      setNavOpenState(false);
+    }
+  });
+}

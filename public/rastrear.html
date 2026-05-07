@@ -17,12 +17,26 @@
           />
         </a>
 
-        <nav class="site-nav" aria-label="Principal">
-          <a href="/index.html#servicos">Serviços</a>
-          <a href="/index.html#infraestrutura">Infraestrutura</a>
-          <a href="/index.html#institucional">Institucional</a>
-          <a href="/index.html#contato">Contato</a>
-          <a class="nav-cta" href="/rastrear.html">Rastrear Carga</a>
+        <button
+          type="button"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Abrir menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-overlay" data-nav-close></div>
+
+        <nav id="site-nav" class="site-nav" aria-label="Principal">
+          <a href="/index.html#servicos" data-nav-close>ServiÃ§os</a>
+          <a href="/index.html#infraestrutura" data-nav-close>Infraestrutura</a>
+          <a href="/index.html#institucional" data-nav-close>Institucional</a>
+          <a href="/index.html#contato" data-nav-close>Contato</a>
+          <a class="nav-cta" href="/rastrear.html" data-nav-close>Rastrear Carga</a>
         </nav>
       </div>
     </header>
@@ -33,12 +47,12 @@
           <span class="eyebrow">Acompanhe sua carga</span>
           <h1 class="hero-title">Consulta de rastreamento com status mais recente da entrega.</h1>
           <p class="hero-copy">
-            Use seu CPF e o código do rastreio para visualizar o status atual e a previsão de entrega da sua carga.
+            Use seu CPF e o cÃ³digo do rastreio para visualizar o status atual e a previsÃ£o de entrega da sua carga.
           </p>
 
           <div class="hero-points">
-            <div class="hero-point">Pesquisa protegida por CPF e código corretos.</div>
-            <div class="hero-point">Resultados com atualização clara de status e horário da consulta.</div>
+            <div class="hero-point">Pesquisa protegida por CPF e cÃ³digo corretos.</div>
+            <div class="hero-point">Resultados com atualizaÃ§Ã£o clara de status e horÃ¡rio da consulta.</div>
           </div>
         </div>
 
@@ -56,7 +70,7 @@
             </label>
 
             <label class="full">
-              Código de rastreio
+              CÃ³digo de rastreio
               <input type="text" name="trackingCode" placeholder="PED-230425-8472" required />
             </label>
 
@@ -76,14 +90,14 @@
             <div class="section-heading">
               <span class="eyebrow">Resultado</span>
               <h2 class="section-title">Resumo da entrega</h2>
-              <p class="section-copy">Veja o destino, a previsão e o estágio atual da remessa.</p>
+              <p class="section-copy">Veja o destino, a previsÃ£o e o estÃ¡gio atual da remessa.</p>
             </div>
             <div id="tracking-summary" class="tracking-summary"></div>
           </div>
 
           <div class="timeline-card" style="margin-top: 24px;">
             <div class="section-heading">
-              <span class="eyebrow">Histórico</span>
+              <span class="eyebrow">HistÃ³rico</span>
               <h2 class="section-title">Linha do tempo</h2>
             </div>
             <div id="timeline" class="timeline"></div>
@@ -115,13 +129,13 @@
             <h3 class="footer-title">Institucional</h3>
             <div class="footer-list">
               <a href="/index.html#institucional">Quem somos</a>
-              <a href="/index.html#servicos">Serviços</a>
-              <a href="/index.html">Página inicial</a>
+              <a href="/index.html#servicos">ServiÃ§os</a>
+              <a href="/index.html">PÃ¡gina inicial</a>
             </div>
           </div>
         </div>
 
-        <div class="footer-bottom">© 2026 Movix Transportadora. Estrutura institucional editável.</div>
+        <div class="footer-bottom">Â© 2026 Movix Transportadora. Estrutura institucional editÃ¡vel.</div>
       </div>
     </footer>
 

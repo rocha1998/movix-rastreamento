@@ -17,12 +17,26 @@
           />
         </a>
 
-        <nav class="site-nav" aria-label="Principal">
-          <a href="#servicos">Serviços</a>
-          <a href="#infraestrutura">Infraestrutura</a>
-          <a href="#institucional">Institucional</a>
-          <a href="#contato">Contato</a>
-          <a class="nav-cta" href="#rastreamento">Rastrear Carga</a>
+        <button
+          type="button"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Abrir menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-overlay" data-nav-close></div>
+
+        <nav id="site-nav" class="site-nav" aria-label="Principal">
+          <a href="#servicos" data-nav-close>ServiÃ§os</a>
+          <a href="#infraestrutura" data-nav-close>Infraestrutura</a>
+          <a href="#institucional" data-nav-close>Institucional</a>
+          <a href="#contato" data-nav-close>Contato</a>
+          <a class="nav-cta" href="#rastreamento" data-nav-close>Rastrear Carga</a>
         </nav>
       </div>
     </header>
@@ -31,9 +45,9 @@
       <div class="container hero-grid">
         <div>
           <span class="eyebrow">Cobertura nacional e rastreamento ativo</span>
-          <h1 class="hero-title">Transporte rodoviário com controle, agilidade e visibilidade da sua carga.</h1>
+          <h1 class="hero-title">Transporte rodoviÃ¡rio com controle, agilidade e visibilidade da sua carga.</h1>
           <p class="hero-copy">
-            A Movix Transportadora conecta operações em todo o Brasil com gestão logística, monitoramento contínuo e atendimento dedicado para empresas que precisam de previsibilidade.
+            A Movix Transportadora conecta operaÃ§Ãµes em todo o Brasil com gestÃ£o logÃ­stica, monitoramento contÃ­nuo e atendimento dedicado para empresas que precisam de previsibilidade.
           </p>
 
           <div class="hero-actions">
@@ -42,8 +56,8 @@
           </div>
 
           <div class="hero-points">
-            <div class="hero-point">Operação com foco em segurança, comunicação e entregas bem coordenadas.</div>
-            <div class="hero-point">Processos pensados para cargas recorrentes, dedicadas e operações corporativas.</div>
+            <div class="hero-point">OperaÃ§Ã£o com foco em seguranÃ§a, comunicaÃ§Ã£o e entregas bem coordenadas.</div>
+            <div class="hero-point">Processos pensados para cargas recorrentes, dedicadas e operaÃ§Ãµes corporativas.</div>
           </div>
         </div>
 
@@ -51,7 +65,7 @@
           <span class="eyebrow">Rastreamento online</span>
           <h2>Consulte sua entrega</h2>
           <p class="card-subtitle">
-            Digite seu CPF e o código do rastreio para acompanhar o andamento da carga e a previsão de entrega.
+            Digite seu CPF e o cÃ³digo do rastreio para acompanhar o andamento da carga e a previsÃ£o de entrega.
           </p>
 
           <form id="search-form" class="form-grid">
@@ -61,7 +75,7 @@
             </label>
 
             <label class="full">
-              Código de rastreio
+              CÃ³digo de rastreio
               <input type="text" name="trackingCode" placeholder="PED-230425-8472" required />
             </label>
 
@@ -72,8 +86,8 @@
           <div id="search-message" class="message"></div>
 
           <div class="hero-status-preview">
-            <strong>Consulta rápida e segura</strong>
-            <span class="muted">A pesquisa é liberada apenas com CPF e código do rastreio corretos.</span>
+            <strong>Consulta rÃ¡pida e segura</strong>
+            <span class="muted">A pesquisa Ã© liberada apenas com CPF e cÃ³digo do rastreio corretos.</span>
           </div>
         </aside>
       </div>
@@ -84,8 +98,8 @@
         <div class="timeline-card">
           <div class="section-heading">
             <span class="eyebrow">Resultado da consulta</span>
-            <h2 class="section-title">Informações da entrega</h2>
-            <p class="section-copy">Status atual, endereço de destino e previsão exibidos logo abaixo.</p>
+            <h2 class="section-title">InformaÃ§Ãµes da entrega</h2>
+            <p class="section-copy">Status atual, endereÃ§o de destino e previsÃ£o exibidos logo abaixo.</p>
           </div>
           <div id="tracking-summary" class="tracking-summary"></div>
         </div>
@@ -93,7 +107,7 @@
         <div class="timeline-card">
           <div class="section-heading">
             <span class="eyebrow">Linha do tempo</span>
-            <h2 class="section-title">Histórico do rastreio</h2>
+            <h2 class="section-title">HistÃ³rico do rastreio</h2>
           </div>
           <div id="timeline" class="timeline"></div>
         </div>
@@ -103,36 +117,36 @@
     <section id="servicos" class="section-shell">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Soluções em logística</span>
-          <h2 class="section-title">Serviços desenhados para operações que exigem consistência.</h2>
+          <span class="eyebrow">SoluÃ§Ãµes em logÃ­stica</span>
+          <h2 class="section-title">ServiÃ§os desenhados para operaÃ§Ãµes que exigem consistÃªncia.</h2>
           <p class="section-copy">
-            Estruture sua movimentação com uma operação flexível, rastreável e preparada para diferentes perfis de carga.
+            Estruture sua movimentaÃ§Ã£o com uma operaÃ§Ã£o flexÃ­vel, rastreÃ¡vel e preparada para diferentes perfis de carga.
           </p>
         </div>
 
         <div class="cards-grid">
           <article class="service-card">
             <div class="icon-chip">TR</div>
-            <h3>Transporte Rodoviário</h3>
-            <p class="muted">Coletas e entregas com cobertura nacional, roteirização organizada e acompanhamento operacional.</p>
+            <h3>Transporte RodoviÃ¡rio</h3>
+            <p class="muted">Coletas e entregas com cobertura nacional, roteirizaÃ§Ã£o organizada e acompanhamento operacional.</p>
           </article>
 
           <article class="service-card">
             <div class="icon-chip">CF</div>
             <h3>Cargas Fechadas</h3>
-            <p class="muted">Operações dedicadas para cargas estratégicas, prazos combinados e visibilidade durante o trajeto.</p>
+            <p class="muted">OperaÃ§Ãµes dedicadas para cargas estratÃ©gicas, prazos combinados e visibilidade durante o trajeto.</p>
           </article>
 
           <article class="service-card">
             <div class="icon-chip">RO</div>
             <h3>Rastreamento Online</h3>
-            <p class="muted">Consulta digital de ponta a ponta com status atualizado e transparência para o cliente final.</p>
+            <p class="muted">Consulta digital de ponta a ponta com status atualizado e transparÃªncia para o cliente final.</p>
           </article>
 
           <article class="service-card">
             <div class="icon-chip">LC</div>
-            <h3>Logística Corporativa</h3>
-            <p class="muted">Atendimento sob medida para empresas com recorrência, controle operacional e necessidade de escala.</p>
+            <h3>LogÃ­stica Corporativa</h3>
+            <p class="muted">Atendimento sob medida para empresas com recorrÃªncia, controle operacional e necessidade de escala.</p>
           </article>
         </div>
       </div>
@@ -142,38 +156,38 @@
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Por que escolher</span>
-          <h2 class="section-title">Infraestrutura, tecnologia e compromisso para apoiar sua operação.</h2>
+          <h2 class="section-title">Infraestrutura, tecnologia e compromisso para apoiar sua operaÃ§Ã£o.</h2>
         </div>
 
         <div class="features-grid">
           <article class="feature-card">
             <div class="icon-chip">01</div>
             <h3>Cobertura nacional</h3>
-            <p class="muted">Atuação preparada para entregas em todos os estados com organização por rota e destino.</p>
+            <p class="muted">AtuaÃ§Ã£o preparada para entregas em todos os estados com organizaÃ§Ã£o por rota e destino.</p>
           </article>
 
           <article class="feature-card">
             <div class="icon-chip">02</div>
             <h3>Monitoramento de cargas</h3>
-            <p class="muted">Acompanhamento contínuo com atualização operacional e visibilidade do andamento.</p>
+            <p class="muted">Acompanhamento contÃ­nuo com atualizaÃ§Ã£o operacional e visibilidade do andamento.</p>
           </article>
 
           <article class="feature-card">
             <div class="icon-chip">03</div>
             <h3>Compromisso com prazos</h3>
-            <p class="muted">Planejamento orientado por SLA e comunicação clara em cada etapa da entrega.</p>
+            <p class="muted">Planejamento orientado por SLA e comunicaÃ§Ã£o clara em cada etapa da entrega.</p>
           </article>
 
           <article class="feature-card">
             <div class="icon-chip">04</div>
             <h3>Atendimento especializado</h3>
-            <p class="muted">Equipe disponível para apoiar embarcadores, parceiros e clientes com respostas rápidas.</p>
+            <p class="muted">Equipe disponÃ­vel para apoiar embarcadores, parceiros e clientes com respostas rÃ¡pidas.</p>
           </article>
 
           <article class="feature-card">
             <div class="icon-chip">05</div>
             <h3>Tecnologia aplicada</h3>
-            <p class="muted">Ferramentas de rastreamento e gestão para tornar a logística mais previsível e confiável.</p>
+            <p class="muted">Ferramentas de rastreamento e gestÃ£o para tornar a logÃ­stica mais previsÃ­vel e confiÃ¡vel.</p>
           </article>
         </div>
       </div>
@@ -183,20 +197,20 @@
       <div class="container about-grid">
         <article class="about-card">
           <span class="eyebrow">Quem somos</span>
-          <h2 class="section-title">Uma transportadora preparada para crescer junto com a sua operação.</h2>
+          <h2 class="section-title">Uma transportadora preparada para crescer junto com a sua operaÃ§Ã£o.</h2>
           <p class="section-copy">
-            A Movix Transportadora atua no transporte e na coordenação logística de cargas com foco em confiabilidade, relacionamento e controle operacional. Este texto é totalmente editável para apresentar a história, diferenciais e proposta institucional da empresa.
+            A Movix Transportadora atua no transporte e na coordenaÃ§Ã£o logÃ­stica de cargas com foco em confiabilidade, relacionamento e controle operacional. Este texto Ã© totalmente editÃ¡vel para apresentar a histÃ³ria, diferenciais e proposta institucional da empresa.
           </p>
           <p class="section-copy">
-            Você pode ajustar este bloco com a narrativa da sua marca, áreas de atuação, tipos de clientes atendidos e pilares de serviço.
+            VocÃª pode ajustar este bloco com a narrativa da sua marca, Ã¡reas de atuaÃ§Ã£o, tipos de clientes atendidos e pilares de serviÃ§o.
           </p>
         </article>
 
         <aside class="about-visual">
-          <span class="eyebrow">Operação profissional</span>
-          <h3>Gestão logística com visão comercial e acompanhamento real da entrega.</h3>
+          <span class="eyebrow">OperaÃ§Ã£o profissional</span>
+          <h3>GestÃ£o logÃ­stica com visÃ£o comercial e acompanhamento real da entrega.</h3>
           <p>
-            Estruture a comunicação com o cliente, demonstre autoridade operacional e destaque a segurança do rastreamento online com uma presença digital mais sólida.
+            Estruture a comunicaÃ§Ã£o com o cliente, demonstre autoridade operacional e destaque a seguranÃ§a do rastreamento online com uma presenÃ§a digital mais sÃ³lida.
           </p>
         </aside>
       </div>
@@ -234,10 +248,10 @@
           <div>
             <span class="eyebrow">Solicite atendimento</span>
             <h2 class="section-title">Precisa transportar sua carga?</h2>
-            <p>Fale com a equipe comercial da Movix Transportadora e solicite uma cotação pelo canal de WhatsApp.</p>
+            <p>Fale com a equipe comercial da Movix Transportadora e solicite uma cotaÃ§Ã£o pelo canal de WhatsApp.</p>
           </div>
           <a class="btn-accent" href="https://w.app/fllj2o" target="_blank" rel="noreferrer">
-            Solicitar cotação
+            Solicitar cotaÃ§Ã£o
           </a>
         </div>
       </div>
@@ -266,13 +280,13 @@
             <h3 class="footer-title">Institucional</h3>
             <div class="footer-list">
               <a href="#institucional">Quem somos</a>
-              <a href="#servicos">Serviços</a>
+              <a href="#servicos">ServiÃ§os</a>
               <a href="/rastrear.html">Rastreamento</a>
             </div>
           </div>
         </div>
 
-        <div class="footer-bottom">© 2026 Movix Transportadora. Estrutura institucional editável.</div>
+        <div class="footer-bottom">Â© 2026 Movix Transportadora. Estrutura institucional editÃ¡vel.</div>
       </div>
     </footer>
 
