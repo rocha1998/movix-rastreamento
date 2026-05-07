@@ -227,8 +227,10 @@ async function deleteTracking(req, res) {
 async function updateTrackingStatus(req, res) {
   const { id } = req.params;
   const { status, note } = req.body;
+  const normalizedStatus = String(status || '').trim();
+  const normalizedNote = String(note || '').trim() || 'Status atualizado pelo admin.';
 
-  if (!status || !String(status).trim()) {
+  if (!normalizedStatus) {
     return res.status(400).json({ message: 'Status e obrigatorio.' });
   }
 
@@ -244,7 +246,7 @@ async function updateTrackingStatus(req, res) {
         WHERE id = $2
         RETURNING *
       `,
-      [String(status).trim(), id]
+      [normalizedStatus, id]
     );
 
     if (updateResult.rowCount === 0) {
@@ -252,9 +254,11 @@ async function updateTrackingStatus(req, res) {
       return res.status(404).json({ message: 'Rastreio nao encontrado.' });
     }
 
+    await client.query('DELETE FROM tracking_history WHERE tracking_id = $1', [id]);
+
     await client.query(
       'INSERT INTO tracking_history (tracking_id, status, note) VALUES ($1, $2, $3)',
-      [id, String(status).trim(), String(note || '').trim() || 'Status atualizado pelo admin.']
+      [id, normalizedStatus, normalizedNote]
     );
 
     await client.query('COMMIT');

@@ -175,33 +175,33 @@ button:disabled {
   display: inline-flex;
   align-items: center;
   gap: 14px;
+  flex-shrink: 0;
 }
 
-.brand-mark {
-  width: 50px;
-  height: 50px;
-  border-radius: 16px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  color: var(--white);
-  font-weight: 900;
-  box-shadow: 0 14px 30px rgba(201, 31, 50, 0.28);
+.site-header .brand {
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 10px 24px rgba(79, 11, 17, 0.18);
 }
 
-.brand-text strong,
-.footer-brand strong {
-  display: block;
-  color: var(--white);
-  font-size: 1.02rem;
-  letter-spacing: 0.04em;
+.brand-logo {
+  width: auto;
+  height: auto;
+  max-height: 70px;
+  object-fit: contain;
 }
 
-.brand-text span,
-.footer-brand span {
-  display: block;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 0.9rem;
+.footer-brand {
+  display: inline-flex;
+  margin-bottom: 18px;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.footer-logo {
+  max-height: 64px;
 }
 
 .site-nav {
@@ -210,6 +210,8 @@ button:disabled {
   gap: 28px;
   color: rgba(255, 255, 255, 0.84);
   font-weight: 600;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .site-nav a:hover {
@@ -476,7 +478,7 @@ button:disabled {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 28px;
 }
 
@@ -801,6 +803,14 @@ th {
 
   .site-header-inner {
     min-height: 76px;
+  }
+
+  .brand-logo {
+    max-height: 55px;
+  }
+
+  .site-header .brand {
+    padding: 5px 8px;
   }
 
   .hero-grid {
