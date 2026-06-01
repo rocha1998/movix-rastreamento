@@ -756,6 +756,12 @@ button:disabled {
   gap: 24px;
 }
 
+.admin-dashboard-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
 .toolbar {
   display: flex;
   align-items: center;
